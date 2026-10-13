@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kinetra | Cardio, Strength, Steam, Coaching &amp; Fuel</title>
+  <meta name="description" content="Kinetra is the all-in-one fitness club: cardio arena, Zumba &amp; aerobics, strength gym, steam bath, personal trainers, diet plans and a healthy food court. Apply for a membership online.">
+  <meta name="theme-color" content="#0b0a14">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script src="/js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Unbounded:wght@500;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+
+  <header class="site-header on-hero" id="top">
+    <div class="container bar">
+      <a class="brand" href="#top" aria-label="Kinetra home"><img src="/assets/logo.svg" alt="" width="36" height="36"><span>Kinetra</span></a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#gear">Gear</a>
+        <a href="#coaching">Coaching</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#locations">Locations</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="#apply">Apply now</a>
+      </nav>
+      <div class="bar-actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Switch to light mode">
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" data-parallax="0.1" aria-hidden="true">
+        <img src="https://images.pexels.com/photos/29224211/pexels-photo-29224211.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="" width="1920" height="1280" fetchpriority="high" decoding="async" data-fallback>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <canvas id="particles" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill glass reveal"><span class="dot" aria-hidden="true"></span> Now open in 6 Indian cities</p>
+          <h1 id="hero-title" class="reveal">Move <span class="gradient-text">different.</span></h1>
+          <p class="lead reveal">Cardio, Zumba, iron, steam, coaching, nutrition and a food court that actually helps. Everything your body needs, under one neon-lit roof.</p>
+          <div class="cta-row reveal">
+            <a class="btn btn-primary" href="#apply">Apply for membership</a>
+            <a class="btn btn-ghost" href="#services">Explore services</a>
+          </div>
+          <dl class="hero-stats reveal">
+            <div><dt>Active members</dt><dd>12k+</dd></div>
+            <div><dt>Certified coaches</dt><dd>40+</dd></div>
+            <div><dt>Open daily</dt><dd>5am&ndash;11pm</dd></div>
+          </dl>
+        </div>
+
+        <div class="scene" id="scene" data-parallax="0.08" aria-hidden="true">
+          <div class="stage">
+            <div class="ring r1"></div>
+            <div class="ring r2"></div>
+            <div class="ring r3"></div>
+            <div class="orb"><img src="/assets/logo.svg" alt="" width="120" height="120"></div>
+            <div class="chip glass c1"><small>Heart rate</small><strong>128 <em>bpm</em></strong></div>
+            <div class="chip glass c2"><small>Steam room</small><strong>45&deg;C</strong></div>
+            <div class="chip glass c3"><small>Streak</small><strong>21 days</strong></div>
+            <div class="chip glass c4"><small>Deadlift PR</small><strong>+10 kg</strong></div>
+          </div>
+        </div>
+      </div>
+      <p class="hero-hint" aria-hidden="true">Move your cursor: the particles react</p>
+    </section>
+
+    <section class="bento-sec" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <p class="eyebrow reveal"><span>&#9889;</span> What's inside</p>
+        <h2 id="services-title" class="section-title reveal">Seven services. <span class="gradient-text">One membership.</span></h2>
+        <p class="lead reveal">Pick a tile to jump straight to the details.</p>
+        <div class="bento">
+          <a class="tile t-cardio reveal" href="#cardio" data-tilt data-tilt-max="5">
+            <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Runner on a treadmill beside floor-to-ceiling windows" loading="lazy" decoding="async" data-fallback>
+            <span class="num">01</span>
+            <span class="go" aria-hidden="true">&#8599;</span>
+            <span class="txt"><strong>Cardio Arena</strong><small>60+ machines, live heart-rate zones</small></span>
+          </a>
+          <a class="tile t-zumba reveal" href="#zumba" data-tilt data-tilt-max="5">
+            <img src="https://images.pexels.com/photos/12312/pexels-photo-12312.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Dancers mid-move in a bright studio during a dance fitness class" loading="lazy" decoding="async" data-fallback>
+            <span class="num">02</span>
+            <span class="go" aria-hidden="true">&#8599;</span>
+            <span class="txt"><strong>Zumba &amp; Aerobics</strong><small>Zumba, aerobics &amp; dance cardio, daily</small></span>
+          </a>
+          <a class="tile t-strength reveal" href="#strength" data-tilt data-tilt-max="5">
+            <img src="https://images.pexels.com/photos/5327530/pexels-photo-5327530.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Athlete squatting under a loaded barbell in a power rack" loading="lazy" decoding="async" data-fallback>
+            <span class="num">03</span>
+            <span class="go" aria-hidden="true">&#8599;</span>
+            <span class="txt"><strong>Strength Gym</strong><small>Racks, platforms, plates up to 200 kg</small></span>
+          </a>
+          <a class="tile t-steam reveal" href="#steam" data-tilt data-tilt-max="5">
+            <img src="https://images.pexels.com/photos/8092430/pexels-photo-8092430.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Warm wooden steam room with benches and soft lighting" loading="lazy" decoding="async" data-fallback>
+            <span class="num">04</span>
+            <span class="go" aria-hidden="true">&#8599;</span>
+            <span class="txt"><strong>Steam Bath</strong><small>Eucalyptus steam &amp; a quiet recovery lounge</small></span>
+          </a>
+          <a class="tile t-trainers reveal" href="#trainers" data-tilt data-tilt-max="5">
+            <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Two athletes working battle ropes in a training hall" loading="lazy" decoding="async" data-fallback>
+            <span class="num">05</span>
+            <span class="go" aria-hidden="true">&#8599;</span>
+            <span class="txt"><strong>Personal Trainers</strong><small>Certified coaches, goal-based plans</small></span>
+          </a>
+          <a class="tile t-diet reveal" href="#diet" data-tilt data-tilt-max="5">
+            <img src="https://images.pexels.com/photos/9026809/pexels-photo-9026809.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Bowl of chia pudding with fresh berries" loading="lazy" decoding="async" data-fallback>
+            <span class="num">06</span>
+            <span class="go" aria-hidden="true">&#8599;</span>
+            <span class="txt"><strong>Diet Plans</strong><small>Custom plans for how you actually eat</small></span>
+          </a>
+          <a class="tile t-food reveal" href="#food" data-tilt data-tilt-max="5">
+            <img src="https://images.pexels.com/photos/2543270/pexels-photo-2543270.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="Plates of avocado toast, greens and fresh juices on a wooden table" loading="lazy" decoding="async" data-fallback>
+            <span class="num">07</span>
+            <span class="go" aria-hidden="true">&#8599;</span>
+            <span class="txt"><strong>Healthy Food Court</strong><small>Protein bowls, juices, macros on the menu</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="service svc-cardio" id="cardio" aria-labelledby="cardio-title">
+      <div class="container service-grid">
+        <div class="service-media reveal" data-parallax="0.05">
+          <div class="tilt-card" data-tilt>
+            <div class="slab" aria-hidden="true"></div>
+            <figure class="photo"><img src="https://images.pexels.com/photos/12250460/pexels-photo-12250460.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="A long row of treadmills in a bright, modern gym" width="1100" height="858" loading="lazy" decoding="async" data-fallback></figure>
+            <figure class="inset"><img src="https://images.pexels.com/photos/775025/pexels-photo-775025.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=520" alt="Close-up of a spin bike flywheel and a cyclist's legs" width="520" height="405" loading="lazy" decoding="async" data-fallback></figure>
+          </div>
+        </div>
+        <div class="service-copy reveal">
+          <p class="eyebrow"><span>01</span> Cardio Arena</p>
+          <h2 id="cardio-title">Torch it. <span class="gradient-text">Track it.</span></h2>
+          <p class="lead">Sixty-plus machines, live heart-rate zones on every screen, and group classes that make 6 a.m. feel like a night out. Whether you're building stamina or chasing a 10K PB, the arena keeps you moving.</p>
+          <div class="facts"><div><strong>60+</strong><span>machines</span></div><div><strong>20</strong><span>classes a week</span></div><div><strong>6am&ndash;10pm</strong><span>studio hours</span></div></div>
+          <ul class="offers">
+            <li>Treadmills, cross-trainers, rowers &amp; air bikes</li>
+            <li>Immersive spin studio with light &amp; sound sync</li>
+            <li>HIIT &amp; spin classes every day</li>
+            <li>Live heart-rate zone tracking on every screen</li>
+          </ul>
+          <div class="included"><span>Included in</span><ul><li>Spark</li><li>Surge</li><li>Apex</li></ul></div>
+          <a class="btn btn-ghost" href="#contact">Ask about Cardio Arena</a>
+        </div>
+      </div>
+    </section>
+    <section class="service svc-zumba" id="zumba" aria-labelledby="zumba-title">
+      <div class="container service-grid">
+        <div class="service-media reveal" data-parallax="0.05">
+          <div class="tilt-card" data-tilt>
+            <div class="slab" aria-hidden="true"></div>
+            <figure class="photo"><img src="https://images.pexels.com/photos/863926/pexels-photo-863926.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Women raising dumbbells together in a high-energy group fitness class" width="1100" height="858" loading="lazy" decoding="async" data-fallback></figure>
+            <figure class="inset"><img src="https://images.pexels.com/photos/7974892/pexels-photo-7974892.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=520" alt="Dancers in colourful outfits moving under purple stage lighting" width="520" height="405" loading="lazy" decoding="async" data-fallback></figure>
+          </div>
+        </div>
+        <div class="service-copy reveal">
+          <p class="eyebrow"><span>02</span> Zumba &amp; Aerobics</p>
+          <h2 id="zumba-title">Dance it. <span class="gradient-text">Sweat it.</span></h2>
+          <p class="lead">Loud music, zero judgement and a calorie burn you'll only notice the next morning. Our certified instructors run Zumba, step aerobics, low-impact aerobics and dance-cardio classes from sunrise to late evening, for every level.</p>
+          <div class="facts"><div><strong>30+</strong><span>classes a week</span></div><div><strong>45 min</strong><span>per class</span></div><div><strong>All levels</strong><span>welcome</span></div></div>
+          <ul class="offers">
+            <li>Zumba &amp; Zumba Toning with Bollywood and Latin playlists</li>
+            <li>Step, high-low &amp; low-impact aerobics</li>
+            <li>Beginner-friendly classes with a free first class</li>
+            <li>Dedicated group studio with sprung floor &amp; sound system</li>
+          </ul>
+          <div class="included"><span>Included in</span><ul><li>Spark (4 classes / month)</li><li>Surge (unlimited)</li><li>Apex (unlimited)</li></ul></div>
+          <a class="btn btn-ghost" href="#contact">Ask about Zumba &amp; Aerobics</a>
+        </div>
+      </div>
+    </section>
+    <section class="service svc-strength" id="strength" aria-labelledby="strength-title">
+      <div class="container service-grid">
+        <div class="service-media reveal" data-parallax="0.05">
+          <div class="tilt-card" data-tilt>
+            <div class="slab" aria-hidden="true"></div>
+            <figure class="photo"><img src="https://images.pexels.com/photos/116078/pexels-photo-116078.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Lifter in a low squat position holding a loaded barbell" width="1100" height="858" loading="lazy" decoding="async" data-fallback></figure>
+            <figure class="inset"><img src="https://images.pexels.com/photos/4162451/pexels-photo-4162451.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=520" alt="Rows of rubber-coated dumbbells on a rack" width="520" height="405" loading="lazy" decoding="async" data-fallback></figure>
+          </div>
+        </div>
+        <div class="service-copy reveal">
+          <p class="eyebrow"><span>03</span> Strength Gym</p>
+          <h2 id="strength-title">Lift heavy. <span class="gradient-text">Live loud.</span></h2>
+          <p class="lead">Competition-grade racks, calibrated plates and a floor that's built to be dropped on. From your first goblet squat to your first 200 kg pull, there's a platform with your name on it.</p>
+          <div class="facts"><div><strong>5am&ndash;11pm</strong><span>floor hours</span></div><div><strong>12</strong><span>power racks</span></div><div><strong>60 kg</strong><span>top dumbbell</span></div></div>
+          <ul class="offers">
+            <li>Olympic platforms &amp; power racks</li>
+            <li>Dumbbells from 2 to 60 kg, bumper plates to 25 kg</li>
+            <li>Plate-loaded &amp; selectorised machines</li>
+            <li>Functional turf zone with sleds, ropes &amp; kettlebells</li>
+          </ul>
+          <div class="included"><span>Included in</span><ul><li>Spark</li><li>Surge</li><li>Apex</li></ul></div>
+          <a class="btn btn-ghost" href="#contact">Ask about Strength Gym</a>
+        </div>
+      </div>
+    </section>
+    <section class="service svc-steam" id="steam" aria-labelledby="steam-title">
+      <div class="container service-grid">
+        <div class="service-media reveal" data-parallax="0.05">
+          <div class="tilt-card" data-tilt>
+            <div class="slab" aria-hidden="true"></div>
+            <figure class="photo"><img src="https://images.pexels.com/photos/7587466/pexels-photo-7587466.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Wooden sauna interior with tiered benches and a bucket" width="1100" height="858" loading="lazy" decoding="async" data-fallback></figure>
+            <figure class="inset"><img src="https://images.pexels.com/photos/3967280/pexels-photo-3967280.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=520" alt="Woman relaxing on a sauna bench wrapped in a towel" width="520" height="405" loading="lazy" decoding="async" data-fallback></figure>
+          </div>
+        </div>
+        <div class="service-copy reveal">
+          <p class="eyebrow"><span>04</span> Steam Bath</p>
+          <h2 id="steam-title">Sweat out. <span class="gradient-text">Switch off.</span></h2>
+          <p class="lead">Recovery is part of the programme. Eucalyptus-infused steam rooms loosen tight muscles and quiet your head after a hard session. Separate rooms for men and women, always spotless.</p>
+          <div class="facts"><div><strong>15 min</strong><span>guided sessions</span></div><div><strong>2</strong><span>private suites</span></div><div><strong>45&deg;C</strong><span>steady heat</span></div></div>
+          <ul class="offers">
+            <li>Eucalyptus-infused steam rooms at 42&ndash;46&deg;C</li>
+            <li>Separate men's &amp; women's suites</li>
+            <li>Cold-plunge pool for contrast therapy</li>
+            <li>Fresh towels, lockers &amp; a quiet lounge</li>
+          </ul>
+          <div class="included"><span>Included in</span><ul><li>Surge (8 / month)</li><li>Apex (unlimited)</li></ul></div>
+          <a class="btn btn-ghost" href="#contact">Ask about Steam Bath</a>
+        </div>
+      </div>
+    </section>
+    <section class="service svc-trainers" id="trainers" aria-labelledby="trainers-title">
+      <div class="container service-grid">
+        <div class="service-media reveal" data-parallax="0.05">
+          <div class="tilt-card" data-tilt>
+            <div class="slab" aria-hidden="true"></div>
+            <figure class="photo"><img src="https://images.pexels.com/photos/6551189/pexels-photo-6551189.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Personal trainer helping a client put on boxing gloves" width="1100" height="858" loading="lazy" decoding="async" data-fallback></figure>
+            <figure class="inset"><img src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=520" alt="Woman gripping heavy battle ropes in a dark gym" width="520" height="405" loading="lazy" decoding="async" data-fallback></figure>
+          </div>
+        </div>
+        <div class="service-copy reveal">
+          <p class="eyebrow"><span>05</span> Personal Trainers</p>
+          <h2 id="trainers-title">Coached. <span class="gradient-text">Not coaxed.</span></h2>
+          <p class="lead">Certified coaches who actually watch your form, adjust your plan every week and celebrate the small wins. One-on-one or in small groups, built around your goal, your schedule and your injuries.</p>
+          <div class="facts"><div><strong>40+</strong><span>certified coaches</span></div><div><strong>1:1</strong><span>or small groups</span></div><div><strong>Monthly</strong><span>body scan</span></div></div>
+          <ul class="offers">
+            <li>Certified one-on-one &amp; small-group coaching</li>
+            <li>Body-composition scan every month</li>
+            <li>Goal plans: fat loss, strength, mobility, sport</li>
+            <li>Rehab-friendly programming for injuries</li>
+          </ul>
+          <div class="included"><span>Included in</span><ul><li>Apex (8 sessions / month)</li></ul></div>
+          <a class="btn btn-ghost" href="#contact">Ask about Personal Trainers</a>
+        </div>
+      </div>
+    </section>
+    <section class="service svc-diet" id="diet" aria-labelledby="diet-title">
+      <div class="container service-grid">
+        <div class="service-media reveal" data-parallax="0.05">
+          <div class="tilt-card" data-tilt>
+            <div class="slab" aria-hidden="true"></div>
+            <figure class="photo"><img src="https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Two colourful healthy bowls with avocado, greens and lime" width="1100" height="858" loading="lazy" decoding="async" data-fallback></figure>
+            <figure class="inset"><img src="https://images.pexels.com/photos/936611/pexels-photo-936611.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=520" alt="Cobb-style salad bowl with egg, avocado, chicken and grapefruit" width="520" height="405" loading="lazy" decoding="async" data-fallback></figure>
+          </div>
+        </div>
+        <div class="service-copy reveal">
+          <p class="eyebrow"><span>06</span> Diet Plans</p>
+          <h2 id="diet-title">Eat smart. <span class="gradient-text">Not less.</span></h2>
+          <p class="lead">Nutritionists design plans around food you already love: dal-chawal included. Vegetarian, vegan, Jain or non-veg, with macros that match your training and a monthly review that keeps you honest.</p>
+          <div class="facts"><div><strong>4</strong><span>diet styles</span></div><div><strong>Monthly</strong><span>plan review</span></div><div><strong>100%</strong><span>custom</span></div></div>
+          <ul class="offers">
+            <li>Custom plans by certified nutritionists</li>
+            <li>Veg, vegan, Jain &amp; non-veg options</li>
+            <li>Macro targets matched to your training</li>
+            <li>Monthly check-ins &amp; grocery lists</li>
+          </ul>
+          <div class="included"><span>Included in</span><ul><li>Apex</li></ul></div>
+          <a class="btn btn-ghost" href="#contact">Ask about Diet Plans</a>
+        </div>
+      </div>
+    </section>
+    <section class="service svc-food" id="food" aria-labelledby="food-title">
+      <div class="container service-grid">
+        <div class="service-media reveal" data-parallax="0.05">
+          <div class="tilt-card" data-tilt>
+            <div class="slab" aria-hidden="true"></div>
+            <figure class="photo"><img src="https://images.pexels.com/photos/4552175/pexels-photo-4552175.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" alt="Green and berry smoothies beside a fresh salad on a cafe table" width="1100" height="858" loading="lazy" decoding="async" data-fallback></figure>
+            <figure class="inset"><img src="https://images.pexels.com/photos/6740849/pexels-photo-6740849.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=520" alt="Wholesome meal bowl next to a bottle of fresh juice" width="520" height="405" loading="lazy" decoding="async" data-fallback></figure>
+          </div>
+        </div>
+        <div class="service-copy reveal">
+          <p class="eyebrow"><span>07</span> Healthy Food Court</p>
+          <h2 id="food-title">Refuel. <span class="gradient-text">Right here.</span></h2>
+          <p class="lead">Skip the post-workout drive-through. Our in-house kitchen serves protein bowls, millet meals, cold-pressed juices and shakes, with calories and macros printed on every item.</p>
+          <div class="facts"><div><strong>120+</strong><span>menu items</span></div><div><strong>6am&ndash;10pm</strong><span>open daily</span></div><div><strong>20%</strong><span>off for Apex</span></div></div>
+          <ul class="offers">
+            <li>Protein bowls, wraps &amp; millet meals</li>
+            <li>Cold-pressed juices &amp; smoothies</li>
+            <li>Calories &amp; macros on every item</li>
+            <li>Open from 6 a.m. to 10 p.m.</li>
+          </ul>
+          <div class="included"><span>Included in</span><ul><li>Surge (10% off)</li><li>Apex (20% off)</li></ul></div>
+          <a class="btn btn-ghost" href="#contact">Ask about Healthy Food Court</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="gear" id="gear" aria-labelledby="gear-title">
+      <div class="container">
+        <p class="eyebrow reveal"><span>&#127947;</span> The equipment</p>
+        <h2 id="gear-title" class="section-title reveal">Serious gear. <span class="gradient-text">Zero queues.</span></h2>
+        <p class="lead reveal">Commercial-grade equipment, serviced weekly and laid out so you spend your time lifting, not waiting.</p>
+        <div class="gear-grid">
+          <figure class="gear-item g1 reveal" data-tilt data-tilt-max="4">
+            <img src="https://images.pexels.com/photos/260352/pexels-photo-260352.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Dumbbell racks at Kinetra" loading="lazy" decoding="async" data-fallback>
+            <figcaption><strong>Dumbbell racks</strong><span>2&ndash;60 kg, rubber-coated</span></figcaption>
+          </figure>
+          <figure class="gear-item g2 reveal" data-tilt data-tilt-max="4">
+            <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Olympic platforms at Kinetra" loading="lazy" decoding="async" data-fallback>
+            <figcaption><strong>Olympic platforms</strong><span>Calibrated bumper plates</span></figcaption>
+          </figure>
+          <figure class="gear-item g3 reveal" data-tilt data-tilt-max="4">
+            <img src="https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Kettlebells at Kinetra" loading="lazy" decoding="async" data-fallback>
+            <figcaption><strong>Kettlebells</strong><span>4&ndash;48 kg cast iron</span></figcaption>
+          </figure>
+          <figure class="gear-item g4 reveal" data-tilt data-tilt-max="4">
+            <img src="https://images.pexels.com/photos/5327505/pexels-photo-5327505.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Cable crossovers at Kinetra" loading="lazy" decoding="async" data-fallback>
+            <figcaption><strong>Cable crossovers</strong><span>Dual adjustable stacks</span></figcaption>
+          </figure>
+          <figure class="gear-item g5 reveal" data-tilt data-tilt-max="4">
+            <img src="https://images.pexels.com/photos/14121526/pexels-photo-14121526.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Battle ropes at Kinetra" loading="lazy" decoding="async" data-fallback>
+            <figcaption><strong>Battle ropes</strong><span>Conditioning zone</span></figcaption>
+          </figure>
+          <figure class="gear-item g6 reveal" data-tilt data-tilt-max="4">
+            <img src="https://images.pexels.com/photos/7689278/pexels-photo-7689278.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Air bikes at Kinetra" loading="lazy" decoding="async" data-fallback>
+            <figcaption><strong>Air bikes</strong><span>For brutal intervals</span></figcaption>
+          </figure>
+          <figure class="gear-item g7 reveal" data-tilt data-tilt-max="4">
+            <img src="https://images.pexels.com/photos/4162485/pexels-photo-4162485.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Colour-coded plates at Kinetra" loading="lazy" decoding="async" data-fallback>
+            <figcaption><strong>Colour-coded plates</strong><span>Easy to find, easy to load</span></figcaption>
+          </figure>
+          <figure class="gear-item g8 reveal" data-tilt data-tilt-max="4">
+            <img src="https://images.pexels.com/photos/31012862/pexels-photo-31012862.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Selectorised stacks at Kinetra" loading="lazy" decoding="async" data-fallback>
+            <figcaption><strong>Selectorised stacks</strong><span>Smooth, quiet, precise</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="coaching" id="coaching" aria-labelledby="coaching-title">
+      <div class="container">
+        <p class="eyebrow reveal"><span>&#127919;</span> Coaching tracks</p>
+        <h2 id="coaching-title" class="section-title reveal">Find your <span class="gradient-text">track.</span></h2>
+        <p class="lead reveal">Every personal-training programme starts with a free assessment and a plan you can see.</p>
+        <div class="coach-grid">
+          <article class="coach glass reveal" data-tilt data-tilt-max="6">
+            <div class="coach-img"><img src="https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Strength and Conditioning coaching track" width="700" height="560" loading="lazy" decoding="async" data-fallback></div>
+            <div class="coach-body">
+              <h3>Strength &amp; Conditioning</h3>
+              <p>Barbell fundamentals, progressive overload and athletic strength.</p>
+              <ul class="tags"><li>Powerlifting</li><li>Olympic lifts</li><li>Hypertrophy</li></ul>
+            </div>
+          </article>
+          <article class="coach glass reveal" data-tilt data-tilt-max="6">
+            <div class="coach-img"><img src="https://images.pexels.com/photos/4720796/pexels-photo-4720796.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="HIIT and Functional coaching track" width="700" height="560" loading="lazy" decoding="async" data-fallback></div>
+            <div class="coach-body">
+              <h3>HIIT &amp; Functional</h3>
+              <p>High-intensity circuits that build engine, speed and resilience.</p>
+              <ul class="tags"><li>Circuits</li><li>Sleds &amp; ropes</li><li>Fat loss</li></ul>
+            </div>
+          </article>
+          <article class="coach glass reveal" data-tilt data-tilt-max="6">
+            <div class="coach-img"><img src="https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Boxing and Conditioning coaching track" width="700" height="560" loading="lazy" decoding="async" data-fallback></div>
+            <div class="coach-body">
+              <h3>Boxing &amp; Conditioning</h3>
+              <p>Bag work, pads and footwork: the fastest way to feel like a fighter.</p>
+              <ul class="tags"><li>Technique</li><li>Cardio</li><li>Stress relief</li></ul>
+            </div>
+          </article>
+          <article class="coach glass reveal" data-tilt data-tilt-max="6">
+            <div class="coach-img"><img src="https://images.pexels.com/photos/6285246/pexels-photo-6285246.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="Mobility and Wellness coaching track" width="700" height="560" loading="lazy" decoding="async" data-fallback></div>
+            <div class="coach-body">
+              <h3>Mobility &amp; Wellness</h3>
+              <p>Gentle, structured sessions for beginners, seniors and recovery.</p>
+              <ul class="tags"><li>Beginners</li><li>Rehab-friendly</li><li>Flexibility</li></ul>
+            </div>
+          </article>
+        </div>
+        <div class="center-cta reveal"><a class="btn btn-ghost" href="#contact">Book a free assessment</a></div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <p class="eyebrow reveal"><span>&#8377;</span> Memberships</p>
+        <h2 id="pricing-title" class="section-title reveal">Pick your <span class="gradient-text">power level.</span></h2>
+        <p class="lead center reveal">Month-to-month. No joining fee. Every plan lists exactly what it covers.</p>
+        <div class="plans" id="plans" aria-live="polite">
+          <p class="plans-status">Loading plans&hellip;</p>
+        </div>
+        <p class="fineprint center">Prices in INR, inclusive of taxes. Services marked with &#10005; are not part of that plan.</p>
+      </div>
+    </section>
+
+    <section class="apply" id="apply" aria-labelledby="apply-title">
+      <div class="container apply-grid">
+        <div class="apply-copy reveal">
+          <p class="eyebrow"><span>&#10024;</span> Join Kinetra</p>
+          <h2 id="apply-title" class="section-title">Start your <span class="gradient-text">membership.</span></h2>
+          <p class="lead">Tell us what you're after and we'll set everything up. No payment is taken online.</p>
+          <ol class="steps">
+            <li><strong>Apply</strong><span>Fill in this short form in under two minutes.</span></li>
+            <li><strong>We call you</strong><span>A team member confirms your plan, branch and start date within one working day.</span></li>
+            <li><strong>Walk in &amp; start</strong><span>Complete enrolment at your branch and begin training.</span></li>
+          </ol>
+          <aside class="plan-summary glass" id="plan-summary" aria-live="polite"></aside>
+        </div>
+
+        <div class="form-card glass reveal">
+          <form id="membership-form" novalidate>
+            <h3 class="form-title">Membership application</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label for="a-name">Full name</label>
+                <input class="input" id="a-name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Aarav Sharma">
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="a-email">Email</label>
+                <input class="input" id="a-email" name="email" type="email" autocomplete="email" maxlength="120" required placeholder="you@example.com">
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="a-phone">Phone</label>
+                <input class="input" id="a-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" required placeholder="+91 98765 43210">
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="a-city">Your city</label>
+                <input class="input" id="a-city" name="city" type="text" autocomplete="address-level2" maxlength="60" list="city-list" required placeholder="Mumbai">
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="a-plan">Membership plan</label>
+                <select class="input" id="a-plan" name="plan" required><option value="">Loading plans&hellip;</option></select>
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="a-branch">Preferred branch <span class="opt">(optional)</span></label>
+                <select class="input" id="a-branch" name="branch_id" ><option value="">Any branch</option></select>
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="a-start">Start date</label>
+                <input class="input" id="a-start" name="start_date" type="date" required>
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="a-goal">Main goal</label>
+                <select class="input" id="a-goal" name="goal" required><option value="">Loading&hellip;</option></select>
+                <p class="field-error"></p>
+              </div>
+              <div class="field wide">
+                <label for="a-notes">Anything we should know? <span class="opt">(optional)</span></label>
+                <textarea class="input" id="a-notes" name="notes" maxlength="500" rows="3" placeholder="Injuries, preferred timings, referrals&hellip;"></textarea>
+                <p class="field-error"></p>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="a-website">Leave this field empty</label>
+                <input id="a-website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+            </div>
+            <div class="form-status-slot" role="status" aria-live="polite"></div>
+            <button class="btn btn-primary submit" type="submit">Submit application</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="stories" id="stories" aria-labelledby="stories-title">
+      <div class="container">
+        <p class="eyebrow reveal"><span>&#10084;</span> Member stories</p>
+        <h2 id="stories-title" class="section-title reveal">Real results. <span class="gradient-text">Real routines.</span></h2>
+        <div class="story-grid">
+          <figure class="story glass reveal">
+            <blockquote>&ldquo;I lost 11 kg in five months and, honestly, I actually enjoy mornings now. My coach rebuilt my plan every two weeks.&rdquo;</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">R</span><span><strong>Riya M.</strong><small>Surge member, Mumbai</small></span></figcaption>
+          </figure>
+          <figure class="story glass reveal">
+            <blockquote>&ldquo;The steam room after leg day is a game changer. Clean, quiet, and the food court's protein bowls are genuinely good.&rdquo;</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">K</span><span><strong>Karthik S.</strong><small>Apex member, Bengaluru</small></span></figcaption>
+          </figure>
+          <figure class="story glass reveal">
+            <blockquote>&ldquo;Moved cities and kept my membership. The diet plan finally understood that I eat rotis, not just oats and chicken.&rdquo;</blockquote>
+            <figcaption><span class="avatar" aria-hidden="true">H</span><span><strong>Harleen K.</strong><small>Surge member, Delhi</small></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="locations" id="locations" aria-labelledby="locations-title">
+      <div class="container">
+        <p class="eyebrow reveal"><span>&#128205;</span> Find us</p>
+        <h2 id="locations-title" class="section-title reveal">Branches across <span class="gradient-text">India.</span></h2>
+        <div class="loc-grid" id="loc-grid" aria-live="polite"><p class="plans-status">Loading branches&hellip;</p></div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="faq-head reveal">
+          <p class="eyebrow"><span>?</span> FAQ</p>
+          <h2 id="faq-title" class="section-title">Good <span class="gradient-text">questions.</span></h2>
+          <p class="lead">Can't find your answer? Send us a message below.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal"><summary>Is there a joining fee or a lock-in?</summary><p>No joining fee and no lock-in. Every plan is month-to-month; you can pause or cancel with 7 days' notice.</p></details>
+          <details class="faq-item reveal"><summary>Can I try Kinetra before I commit?</summary><p>Yes. Book a free day pass at any branch through the contact form and a team member will arrange a tour and a trial session.</p></details>
+          <details class="faq-item reveal"><summary>Can I use any branch with one membership?</summary><p>Yes. Your membership works at every Kinetra branch, so you can train near home or near work.</p></details>
+          <details class="faq-item reveal"><summary>What happens after I apply for a membership?</summary><p>We call you within one working day to confirm your plan, branch and start date. You pay at the branch when you start, and nothing is charged online.</p></details>
+          <details class="faq-item reveal"><summary>Do you offer diet plans for vegetarians, vegans or Jain diets?</summary><p>Yes. Nutritionists build plans for vegetarian, vegan, Jain and non-veg diets, using the foods you already eat.</p></details>
+          <details class="faq-item reveal"><summary>Are the trainers certified?</summary><p>All coaches hold recognised certifications and are first-aid trained. Apex members get 8 personal training sessions every month.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow"><span>&#9993;</span> Say hi</p>
+          <h2 id="contact-title" class="section-title">Ready when <span class="gradient-text">you are.</span></h2>
+          <p class="lead">Questions about plans, a free trial, or a corporate package? Drop us a line and a member of our team will reply within one working day.</p>
+          <ul class="contact-points">
+            <li><strong>Free trial</strong> day pass at any branch</li>
+            <li><strong>Reply</strong> within 1 working day</li>
+            <li><strong>Visit</strong> Mumbai, Delhi, Bengaluru, Hyderabad, Pune &amp; Ahmedabad</li>
+          </ul>
+        </div>
+
+        <div class="form-card glass reveal">
+          <form id="inquiry-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name">Full name</label>
+                <input class="input" id="f-name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Aarav Sharma">
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input class="input" id="f-email" name="email" type="email" autocomplete="email" maxlength="120" required placeholder="you@example.com">
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone</label>
+                <input class="input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="25" required placeholder="+91 98765 43210">
+                <p class="field-error"></p>
+              </div>
+              <div class="field">
+                <label for="f-city">City</label>
+                <input class="input" id="f-city" name="city" type="text" autocomplete="address-level2" maxlength="60" list="city-list" required placeholder="Mumbai"><datalist id="city-list"></datalist>
+                <p class="field-error"></p>
+              </div>
+              <div class="field wide">
+                <label for="f-message">Message</label>
+                <textarea class="input" id="f-message" name="message" maxlength="1000" required placeholder="Tell us what you&#39;re looking for..."></textarea>
+                <p class="field-error"></p>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="f-website">Leave this field empty</label>
+                <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+            </div>
+            <div class="form-status-slot" role="status" aria-live="polite"></div>
+            <button class="btn btn-primary submit" type="submit">Send message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><img src="/assets/logo.svg" alt="" width="36" height="36"><span>Kinetra</span></a>
+        <p>Cardio, iron, steam, coaching, nutrition and fuel. Move different.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#services">Services</a><a href="#gear">Gear</a><a href="#pricing">Pricing</a><a href="#apply">Apply</a><a href="#locations">Locations</a><a href="#faq">FAQ</a>
+      </nav>
+      <p class="foot-small">&copy; <span id="year">2026</span> Kinetra Fitness &middot; <a class="admin-link" href="/admin/">Staff login</a></p>
+    </div>
+  </footer>
+
+  <script src="/js/theme.js"></script>
+  <script src="/js/particles.js"></script>
+  <script src="/js/site.js"></script>
+</body>
+</html>

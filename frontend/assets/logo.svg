@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kinetra">
+  <defs>
+    <linearGradient id="kg" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset=".55" stop-color="#ff3d9a"/>
+      <stop offset="1" stop-color="#ff8a3d"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#kg)"/>
+  <path d="M16 14h10v14l16-14h12L37.5 32 55 50H43L26 36v14H16z" fill="#fff"/>
+  <circle cx="51" cy="13" r="4.5" fill="#c6ff3d"/>
+</svg>
