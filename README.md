@@ -1,10 +1,12 @@
-# Kinetra: fitness website + admin dashboard
+# Kinetra: fitness website + admin dashboard: 
+Final Walkthrough: https://drive.google.com/file/d/1RSM1o7qfzdEtc0f0aqemjIms0UuNaRee/view?usp=drive_link
+
 
 A public marketing site and a staff dashboard for **Kinetra**, a fitness brand with cardio, Zumba & aerobics, strength, steam bath, personal trainers, diet plans and a healthy food court. Visitors can send a contact message or apply for a membership online; staff track both in the admin panel.
 
-- **Public site:** gym-photo hero with an interactive 3D particle field, a services grid, a section for each of the seven services, an equipment gallery, coaching tracks, pricing (each plan lists exactly which services it covers), a membership application form, member stories, branch locations, an FAQ and a contact form. Light and dark themes, responsive down to phones.
+- **Public site:** gym-photo hero with an interactive 3D particle field, a services grid, a section for each of the seven services, an equipment gallery, coaching tracks, pricing (each plan lists exactly which services it covers), a membership application form, member stories, branch locations, an FAQ and a contact form. Light and dark themes, responsive down to phones. A floating chat assistant, **Kinetra Coach** (Google Gemini), answers questions about Kinetra and general fitness, and politely declines anything else.
 - **Admin dashboard:** login, overview (customer, message and application totals with charts), add / edit / delete branches (city picked from a list of Indian cities), contact messages (mark handled), and membership applications (track status: new, contacted, enrolled, declined).
-- **Backend:** Python, FastAPI, SQLAlchemy 2 (SQLite by default, PostgreSQL by config), JWT auth
+- **Backend:** Python, FastAPI, SQLAlchemy 2 (SQLite by default, PostgreSQL by config), JWT auth, Google Gemini (`google-genai`) for the chatbot
 - **Frontend:** plain HTML, CSS and JavaScript (no build step), Chart.js for the admin charts
 - FastAPI serves both the API (`/api/...`) and the frontend, so there is one process to run.
 
@@ -31,6 +33,8 @@ Requires Python 3.10+. The pages load fonts from Google Fonts, Chart.js from jsD
 backend/
   requirements.txt
   .env.example              all settings, documented
+  knowledge/
+    kinetra_knowledge_base.md   everything about the site, used by the chatbot
   app/
     main.py                 app factory, security headers, static frontend mount
     config.py               settings (env / .env)
@@ -40,12 +44,13 @@ backend/
     security.py             bcrypt hashing, JWT creation/verification
     ratelimit.py            in-memory rate limiter
     mailer.py               SMTP notifications for contact messages and membership applications
+    chatbot.py              Kinetra Coach: persona + knowledge base + live data -> Gemini
     catalog.py              services, membership plans, plan coverage, fitness goals (single source of truth)
     cities.py               Indian cities (+ state) for the branch dropdown
     seed.py                 admin bootstrap + realistic sample data (customers, messages, applications)
     cli.py                  clear sample data, CSV import, reset password
     routes/
-      public.py             catalog, branches, POST contact message, POST membership application (no auth)
+      public.py             catalog, branches, POST contact message, membership application, chat (no auth)
       auth.py               POST login, GET me
       branches.py           cities, list/create/edit/delete branches (admin)
       inquiries.py          contact messages: list, mark handled / reopen   (admin)
@@ -54,8 +59,8 @@ backend/
 frontend/
   index.html                public site
   admin/index.html          login + dashboard
-  css/ base.css site.css admin.css
-  js/  theme-init.js theme.js particles.js site.js admin.js
+  css/ base.css site.css chat.css admin.css
+  js/  theme-init.js theme.js particles.js site.js chat.js admin.js
   assets/ logo.svg favicon.svg
 ```
 
@@ -67,6 +72,7 @@ frontend/
 | GET | `/api/public/branches` | no | branch list for the Locations section and the application form |
 | POST | `/api/public/inquiries` | no | contact message (validated, rate-limited, emailed) |
 | POST | `/api/public/memberships` | no | membership application (validated, rate-limited, emailed) |
+| POST | `/api/public/chat` | no | chatbot turn: body `{"messages": [{"role": "user"\|"assistant", "content": "..."}]}`, returns `{"reply": "..."}` (rate-limited; 503 if no Gemini key) |
 | POST | `/api/auth/login` | no | returns a JWT (locks out after 5 failures / 15 min) |
 | GET | `/api/auth/me` | yes | current admin |
 | GET | `/api/admin/cities` | yes | Indian cities for the dropdown |
@@ -86,6 +92,7 @@ Everything is optional and set in `backend/.env` (see `.env.example`).
 
 - **Database:** `DATABASE_URL`. Default is SQLite (`backend/fitness.db`). For PostgreSQL install the driver (`pip install "psycopg[binary]"`) and set `DATABASE_URL=postgresql+psycopg://user:pass@host:5432/dbname`.
 - **Notification email:** set `INQUIRY_NOTIFY_EMAIL` (recipient) plus `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM`. Every contact message and membership application is saved to the database first; the email is sent in the background, and a mail failure is logged but never shown to the visitor. Without SMTP settings, emails are skipped.
+- **Chatbot:** set `GEMINI_API_KEY` (create one at <https://aistudio.google.com/apikey>) and optionally `GEMINI_MODEL` (default `gemini-2.5-flash`). Without a key the widget shows an "assistant is offline" message and points visitors to the contact form. The assistant's prompt is the persona and rules in `backend/app/chatbot.py`, plus `backend/knowledge/kinetra_knowledge_base.md`, plus a live block of plans, coverage and branches read from `catalog.py` and the database, so prices never drift. Edit the knowledge-base file to change what the bot knows (no restart needed). It answers only fitness and Kinetra questions and declines everything else with a light, creative refusal; it can't book or take payments, only explain and link to the application form. Conversation history lives in the visitor's browser (session storage) and is not stored on the server.
 - **Services, prices, plan coverage and fitness goals:** edit `backend/app/catalog.py`; the pricing section, the plan summary and the application form update on restart. The service sections and photo grid themselves are in `frontend/index.html`, so a new service needs an entry in both places.
 
 ## Replacing the sample data with live data
@@ -109,11 +116,12 @@ Revenue records are stored but no longer shown on the dashboard. Dates are `YYYY
 - Run behind HTTPS (for example nginx or Caddy) and start uvicorn with `--proxy-headers` so rate limits see the real client IP. Set `SECRET_KEY` and `ADMIN_PASSWORD` explicitly.
 - Rate limits are in-memory and per process; with several workers, add limits at the proxy as well.
 - Tables are created automatically on startup. For schema changes over time, add Alembic migrations.
+- Chat requests are limited to 40 per 10 minutes per IP and cost Gemini usage; set a quota or budget alert on your API key.
 - The admin token lives in `sessionStorage` and expires after `ACCESS_TOKEN_MINUTES` (default 60). A strict Content-Security-Policy is sent with every response; if you add a new external script, font or image host, allow it in `CSP` in `backend/app/main.py`.
 
 ## Content you should replace before launch
 
-The following are placeholders written for the demo: hero numbers ("12k+ members", "40+ coaches", "6 cities"), service facts (machine counts, class counts and lengths, hours, steam temperature), the Zumba & aerobics class limits per plan, coaching tracks, the three member stories and the FAQ answers. They live in `frontend/index.html`. Plan names and prices are in `backend/app/catalog.py`. Branch cards come from the database.
+The following are placeholders written for the demo: hero numbers ("12k+ members", "40+ coaches", "6 cities"), service facts (machine counts, class counts and lengths, hours, steam temperature), the Zumba & aerobics class limits per plan, coaching tracks, the three member stories and the FAQ answers. They live in `frontend/index.html`. Plan names and prices are in `backend/app/catalog.py`. Branch cards come from the database. If you change any of these, update `backend/knowledge/kinetra_knowledge_base.md` too so the chatbot stays in sync.
 
 ## Photos
 

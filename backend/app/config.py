@@ -26,6 +26,9 @@ class Settings(BaseSettings):
     smtp_use_tls: bool = True
     smtp_use_ssl: bool = False
 
+    gemini_api_key: str = ""
+    gemini_model: str = "gemini-2.5-flash"
+
     seed_sample_data: bool = True
     enable_api_docs: bool = False
 

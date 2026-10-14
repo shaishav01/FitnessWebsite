@@ -4,16 +4,18 @@ from sqlalchemy.orm import Session
 
 from ..catalog import GOAL_LABELS, GOALS, PLAN_NAMES, PLANS, SERVICES
 from ..database import get_db
+from ..chatbot import ChatUnavailable, generate_reply
 from ..mailer import send_inquiry_email, send_membership_email
 from ..models import Branch, Inquiry, MembershipApplication
 from ..ratelimit import RateLimiter
-from ..schemas import InquiryAck, InquiryCreate, MembershipCreate, PublicBranch
+from ..schemas import ChatReply, ChatRequest, InquiryAck, InquiryCreate, MembershipCreate, PublicBranch
 
 router = APIRouter(prefix="/api/public", tags=["public"])
 
 # 5 submissions per 10 minutes per IP, per form
 _inquiry_limiter = RateLimiter(limit=5, window_seconds=600)
 _application_limiter = RateLimiter(limit=5, window_seconds=600)
+_chat_limiter = RateLimiter(limit=40, window_seconds=600)  # chat turns per IP
 
 
 def _client_ip(request: Request) -> str:
@@ -93,3 +95,16 @@ def apply_for_membership(
         "branch_name": branch.name if branch else None,
     })
     return ack
+
+
+@router.post("/chat", response_model=ChatReply)
+def chat(payload: ChatRequest, request: Request, db: Session = Depends(get_db)):
+    """Stateless chat: the browser sends the recent conversation, the server adds the knowledge base."""
+    ip = _client_ip(request)
+    _check_limit(_chat_limiter, ip)
+    _chat_limiter.hit(ip)
+    try:
+        reply = generate_reply(db, [m.model_dump() for m in payload.messages])
+    except ChatUnavailable:
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, "The assistant is offline right now. Please use the contact form and we'll reply within one working day.")
+    return ChatReply(reply=reply)
